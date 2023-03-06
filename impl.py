@@ -9,6 +9,7 @@ import qrcode
 key = "Thereisnosuchthingasalifebetterthanyours"
 
 
+
 #One-Time Password
 # Every 30 seconds, we get a new otp
 totp = pyotp.TOTP(key)
@@ -32,7 +33,7 @@ for i in range(5):
     counter += 1
 
 # QR Code OTP
-uri = pyotp.totp.TOTP(key).provisioning_uri(name="username123",
-                                            issuer_name="Burner")           #works with Google Authenticator app
+uri = pyotp.totp.TOTP(key).provisioning_uri(name="dave47",
+                                            issuer_name="Cactus")           #works with Google Authenticator app
 print(uri)
 qrcode.make(uri).save("totp.png")                                           #qrcode generated
